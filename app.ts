@@ -94,4 +94,20 @@
 
 })();
 
-//
+(function() {
+
+    const Jhon = {
+        numbre: 'Jhon',
+        smash() {
+            
+            setTimeout( () => { // Funcion de flecha
+            //setTimeout( function() {
+                console.log(`${ this.nombre } smash!!!`);
+            }, 1000 );
+        }
+    }
+    Jhon.smash();
+})();
+console.log('Funcional');
+
+
