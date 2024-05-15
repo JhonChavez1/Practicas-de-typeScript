@@ -92,21 +92,17 @@
 
     console.log( sumarN(5,5));
 
-})();
-
-(function() {
-
     const Jhon = {
-        numbre: 'Jhon',
-        smash() {
+        nombre: 'Jhon',
+        Chavez() {
             
             setTimeout( () => { // Funcion de flecha
             //setTimeout( function() {
-                console.log(`${ this.nombre } smash!!!`);
+                console.log(`${ this.nombre } Chavez!!!`);
             }, 1000 );
         }
     }
-    Jhon.smash();
+    Jhon.Chavez();
 })();
 console.log('Funcional');
 
