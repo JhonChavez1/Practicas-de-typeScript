@@ -25,7 +25,7 @@
     let spiderman = {
         nombre: 'Peter',
         edad: 30
-    };
+};
 
 })();
 
@@ -105,6 +105,7 @@
     Jhon.Chavez();
 })();
 console.log('Funcional');
+console.log('JHON'); //PRUEBA DE CONFLICTOS
 
 document.getElementById('boton')! .addEventListener('click', function() {
     const imagenSrc = (document.getElementById('imagen') as HTMLImageElement) .src;

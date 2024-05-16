@@ -76,6 +76,7 @@
     Jhon.Chavez();
 })();
 console.log('Funcional');
+console.log('JHON'); //PRUEBA DE CONFLICTOS
 document.getElementById('boton').addEventListener('click', function () {
     var imagenSrc = document.getElementById('imagen').src;
     window.location.href = imagenSrc;
