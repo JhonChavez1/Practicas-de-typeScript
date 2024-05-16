@@ -63,5 +63,16 @@
     };
     var sumarF = function (a, b) { return a + b; };
     console.log(sumarN(5, 5));
+    var Jhon = {
+        nombre: 'Jhon',
+        Chavez: function () {
+            var _this = this;
+            setTimeout(function () {
+                //setTimeout( function() {
+                console.log("".concat(_this.nombre, " Chavez!!!"));
+            }, 1000);
+        }
+    };
+    Jhon.Chavez();
 })();
-
+console.log('Funcional');
