@@ -76,3 +76,4 @@
     Jhon.Chavez();
 })();
 console.log('Funcional');
+console.log('JHON'); //PRUEBA DE CONFLICTOS
