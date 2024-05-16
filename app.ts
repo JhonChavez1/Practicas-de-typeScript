@@ -106,4 +106,13 @@
 })();
 console.log('Funcional');
 
+document.getElementById('boton')! .addEventListener('click', function() {
+    const imagenSrc = (document.getElementById('imagen') as HTMLImageElement) .src;
+    window.location.href = imagenSrc; 
+    document.getElementById('botonRegresar')! .style.display = 'inline-block';
+    console.log('ejecucion normal')  
+});
 
+document.getElementById('botonRegresar')! .addEventListener('click', function() {
+    window.location.href = "index.html";
+});

@@ -1,0 +1,15 @@
+h1 {
+    color: rgb(86, 150, 223);
+    font-size: 14xp;
+}
+
+button {
+    background-color: rgb(87, 179, 221);
+    color: white;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 3xp;
+
+}
+
