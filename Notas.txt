@@ -1,4 +1,6 @@
-tsc -w "compilar typeScripit a javaScript, esto es una 
+tsc -w "compilar typeScripit a javaScript
+
+ esto es una 
 prueba de CONFLICTOS
 123456
 // CONFLICTOS
