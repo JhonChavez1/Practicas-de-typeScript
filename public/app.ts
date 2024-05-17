@@ -110,10 +110,21 @@ console.log('JHON'); //PRUEBA DE CONFLICTOS
 document.getElementById('boton')! .addEventListener('click', function() {
     const imagenSrc = (document.getElementById('imagen') as HTMLImageElement) .src;
     window.location.href = imagenSrc; 
-    document.getElementById('botonRegresar')! .style.display = 'inline-block';
+    document.getElementById('botonRegresar')!.style.display = 'inline-block';
     console.log('ejecucion normal')  
 });
 
-document.getElementById('botonRegresar')! .addEventListener('click', function() {
+ document.getElementById('botonRegresar')! .addEventListener('click', function() {
     window.location.href = "index.html";
 });
+
+(()=>{
+    const avenger = {
+        nombre: 'Jhon',
+        clave: '12345',
+        poder: 'power'
+    }
+    console.log( avenger.nombre);
+    console.log(avenger.clave);
+    console.log(avenger.poder);
+})();
