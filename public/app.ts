@@ -118,13 +118,94 @@ document.getElementById('boton')! .addEventListener('click', function() {
     window.location.href = "index.html";
 });
 
+
+
+
+// DESTRUCCION DE OBJETOS Y ARREGLOS
 (()=>{
     const avenger = {
-        nombre: 'Jhon',
+        nombre: 'JhonF',
         clave: '12345',
         poder: 'power'
     }
-    console.log( avenger.nombre);
+    
+    const extraer = ({ nombre, poder, clave }: any) => {
+    }
+        
+
+    const { nombre, clave, poder } = avenger;             // No importa el orden siempre y cuando sea un objeto
+    
+    /*console.log( avenger.nombre);
     console.log(avenger.clave);
-    console.log(avenger.poder);
+    console.log(avenger.poder);*/
+
+    console.log(nombre);
+    console.log(clave);
+    console.log(poder);
+    //___________________________________________________________
+
+
+    const avengers: string[] = [`Thor`,`Iroman`,`Spiderman`, `1245`];
+
+    const [ thor, iroman, spiderman, numero ] = avengers;
+
+    console.log(thor);
+    console.log(iroman);
+    console.log(spiderman);
+    console.log(numero)
+
+})();
+
+
+
+
+//PROMESAS
+
+(()=>{
+
+    console.log('Inicio');
+
+    // resolve, se llama cuando funciona correcatmente
+    // reject, se llama cuando sucede un error
+    const prom1 = new Promise(( resolve, reject ) => {
+
+        setTimeout(() => {
+            reject('Se termino el timeout');
+        }, 1000);
+
+    });
+
+    prom1
+        .then( mensaje => console.log( mensaje ))
+        .catch( err => console.warn( err ));
+          
+    console.log('Fin')
+
+})();
+
+
+//PROMESAS Y SU TIPADO
+
+(()=>{
+
+    const retirarDinero = ( montoRetirar: number): Promise<number> => {
+        let dineroActual = 1000;
+
+        return new Promise( (resolve, reject)=> {
+            if (montoRetirar > dineroActual) {
+                reject('No hay suficientes fondos');
+            }else {
+                dineroActual -= montoRetirar;
+                resolve( dineroActual );
+            }
+
+        });
+        
+    }
+
+    retirarDinero( 400 )
+        .then( montoActual => console.log(`Me queda ${ montoActual }`))
+        .catch(console.warn);
+
+
 })();
