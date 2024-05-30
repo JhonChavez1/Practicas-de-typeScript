@@ -209,3 +209,15 @@ document.getElementById('boton')! .addEventListener('click', function() {
 
 
 })();
+
+
+// INTERFACES --------------------------------------------------------
+
+(()=>{
+
+    const enviarMision = (xmen: {nombre: string}) => {
+        console.log(`Enviando a ${ xmen.nombre } a la mision `);
+    }
+
+})();
+

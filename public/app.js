@@ -143,3 +143,9 @@ document.getElementById('botonRegresar').addEventListener('click', function () {
         .then(montoActual => console.log(`Me queda ${montoActual}`))
         .catch(console.warn);
 })();
+// INTERFACES --------------------------------------------------------
+(() => {
+    const enviarMision = (xmen) => {
+        console.log(`Enviando a ${xmen.nombre} a la mision `);
+    };
+})();
