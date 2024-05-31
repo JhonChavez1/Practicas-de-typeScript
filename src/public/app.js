@@ -143,3 +143,52 @@ document.getElementById('botonRegresar').addEventListener('click', function () {
         .then(montoActual => console.log(`Me queda ${montoActual}`))
         .catch(console.warn);
 })();
+/* INTERFACES --------------------------------------------------------
+ Son las reglas que cumple un objeto para utilizar como un tipo*/
+(() => {
+    const enviarMision = (xmen) => {
+        console.log(`Enviando a ${xmen.nombre} a la mision `);
+    };
+    const regresarAlCuartel = (xmen) => {
+        console.log(`Enviando a ${xmen.nombre} a la misión`);
+    };
+    const wolverine = {
+        nombre: 'logan',
+        edad: 60
+    };
+    enviarMision(wolverine);
+    regresarAlCuartel(wolverine);
+})();
+// CLASES---------------------------------------------------------------
+// CONSTRUCTORES DE UNA CLASE
+(() => {
+    class Avenger {
+        constructor(nombre, equipo, nombreReal, puedePelear) {
+            this.nombre = 'sin nombre';
+            this.peleasGanadas = 15;
+            this.nombre = nombre;
+            this.equipo = equipo;
+            this.nombreReal = nombreReal;
+            this.puedePelear = true;
+        }
+    }
+    const antman = new Avenger('Antman');
+    antman.equipo = 'Iroman';
+    antman.nombreReal = 'Batman';
+    antman.pedePelear = true;
+    console.log(antman);
+})();
+// SIMPLIFICANDO LAS PROPIEDADES DE UNA CLASE
+(() => {
+    class Equipo {
+        constructor(nombre, capitan, jugadores = 15, partidosGanados, campeon = true) {
+            this.nombre = nombre;
+            this.capitan = capitan;
+            this.jugadores = jugadores;
+            this.partidosGanados = partidosGanados;
+            this.campeon = campeon;
+        }
+    }
+    const yankees = new Equipo('Yankees', 'Jhon');
+    console.log(yankees);
+})();

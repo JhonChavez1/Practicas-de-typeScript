@@ -1,3 +1,4 @@
+
 (function() {
 
     const mensaje = 'Hola';
@@ -209,3 +210,82 @@ document.getElementById('boton')! .addEventListener('click', function() {
 
 
 })();
+
+
+/* INTERFACES --------------------------------------------------------
+ Son las reglas que cumple un objeto para utilizar como un tipo*/
+
+(()=>{
+
+    interface Xmen {
+        nombre: string;
+        edad: number;
+        poder?: string;
+    }
+
+    const enviarMision = (xmen: {xmen: Xmen}) => {
+        console.log(`Enviando a ${ xmen.nombre } a la mision `);
+    }
+
+    const regresarAlCuartel = (xmen: {xmen: Xmen}) =>{
+        console.log(`Enviando a ${xmen.nombre} a la misión`);
+    }
+
+    const wolverine: Xmen = {
+        nombre: 'logan',
+        edad: 60
+    }
+
+    enviarMision(wolverine);
+    regresarAlCuartel(wolverine);
+
+})();
+
+
+
+
+// CLASES---------------------------------------------------------------
+// CONSTRUCTORES DE UNA CLASE
+(()=>{
+
+    class Avenger {
+        nombre: string = 'sin nombre';
+        equipo: string;
+        nombreReal: string;
+        puedePelear: boolean;
+        peleasGanadas: number = 15;
+
+        constructor (nombre: string, equipo: string, nombreReal: string, puedePelear: boolean){
+            this.nombre = nombre;
+            this.equipo = equipo;
+            this.nombreReal = nombreReal;
+            this.puedePelear = true;
+        }
+    }
+
+    const antman = new Avenger('Antman');
+    antman.equipo = 'Iroman';
+    antman.nombreReal = 'Batman';
+    antman.pedePelear = true;
+    console.log(antman);
+
+})();
+
+// SIMPLIFICANDO LAS PROPIEDADES DE UNA CLASE
+
+(()=>{
+     class Equipo{
+        constructor( public nombre: string,
+                     public capitan: string,
+                     public jugadores: number = 15,
+                     public partidosGanados?: number,
+                     public campeon: boolean = true
+                     ){}
+     }
+     const yankees = new Equipo('Yankees', 'Jhon');
+     console.log(yankees);
+
+
+})();
+
+
