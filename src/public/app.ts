@@ -1,7 +1,3 @@
-import { Usuario } from './public/usuario.class';
-
-const wolverine = new Usuario('Jhon', 'wolverine1234');
-wolverine.imprimir();
 
 (function() {
 

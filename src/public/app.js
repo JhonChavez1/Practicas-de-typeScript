@@ -1,8 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const usuario_class_1 = require("./public/usuario.class");
-const wolverine = new usuario_class_1.Usuario('Jhon', 'wolverine1234');
-wolverine.imprimir();
 (function () {
     const mensaje = 'Hola';
     /*if ( true ) {
