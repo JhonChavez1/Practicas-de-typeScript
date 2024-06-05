@@ -1,3 +1,7 @@
+
+// npx ts-node src/server.ts
+
+
 import express from 'express';
 import path from 'path';
 import cors from 'cors';

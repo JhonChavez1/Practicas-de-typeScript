@@ -1,6 +1,9 @@
 "use strict";
+/*import { User } from './clases/user';
+const wolverine = new User('Logan', '1234');
+console.log(wolverine);*/
 (function () {
-    const mensaje = 'Hola';
+    var mensaje = 'Hola';
     /*if ( true ) {
         let mensaje = 'mundo';
     }*/
@@ -8,16 +11,16 @@
 })();
 // tipos de datos
 (function () {
-    let mensaje = 'Hola';
-    let numero = 123;
-    let booleano = true; //false
-    let hoy = new Date();
-    let cualquiercosa;
+    var mensaje = 'Hola';
+    var numero = 123;
+    var booleano = true; //false
+    var hoy = new Date();
+    var cualquiercosa;
     cualquiercosa = mensaje;
     cualquiercosa = numero;
     cualquiercosa = booleano;
     cualquiercosa = hoy;
-    let spiderman = {
+    var spiderman = {
         nombre: 'Peter',
         edad: 30
     };
@@ -27,49 +30,49 @@
     function getEdad() {
         return 100 + 100 + 300;
     }
-    const nombre = 'Jhon';
-    const apellido = 'Chavez';
-    const edad = 33;
+    var nombre = 'Jhon';
+    var apellido = 'Chavez';
+    var edad = 33;
     //const salida = nombre + apellido + edad;
     //const salida = nombre + " "+apellido + "("+ edad +")";
-    const salida = `${nombre} ${apellido}
-        ( ${edad})
-        ( ${getEdad()})`;
+    var salida = "".concat(nombre, " ").concat(apellido, "\n        ( ").concat(edad, ")\n        ( ").concat(getEdad(), ")");
     console.log(salida);
 })();
 // FUNCIONES: PARÁMETROS OPCIONALES O BLIGATARIOS Y POR DEFECTO
 (function () {
     function activar(quien, // OBLIGATORIO
     momento, //OPCIONAL: el signo de pregunta le indica a typescript que momeneto puede ser opcional
-    objeto = 'batiseñal') {
+    objeto) {
+        if (objeto === void 0) { objeto = 'batiseñal'; }
         if (momento) {
-            console.log(`${quien} activó la ${objeto} en la ${momento}`);
+            console.log("".concat(quien, " activ\u00F3 la ").concat(objeto, " en la ").concat(momento));
         }
         else {
-            console.log(`${quien} activo la ${objeto}.`);
+            console.log("".concat(quien, " activo la ").concat(objeto, "."));
         }
     }
     activar('Gordon', 'tarde');
 })();
 // FUNCIONES DE FLECHA
 (function () {
-    const miFuncion = function (a) {
+    var miFuncion = function (a) {
         return a.toUpperCase();
     };
-    const miFuncionF = (a) => a.toUpperCase();
+    var miFuncionF = function (a) { return a.toUpperCase(); };
     console.log(miFuncion('NORMAL'));
     console.log(miFuncion('FLECHA'));
-    const sumarN = function (a, b) {
+    var sumarN = function (a, b) {
         return a + b;
     };
-    const sumarF = (a, b) => a + b;
+    var sumarF = function (a, b) { return a + b; };
     console.log(sumarN(5, 5));
-    const Jhon = {
+    var Jhon = {
         nombre: 'Jhon',
-        Chavez() {
-            setTimeout(() => {
+        Chavez: function () {
+            var _this = this;
+            setTimeout(function () {
                 //setTimeout( function() {
-                console.log(`${this.nombre} Chavez!!!`);
+                console.log("".concat(_this.nombre, " Chavez!!!"));
             }, 1000);
         }
     };
@@ -78,7 +81,7 @@
 console.log('Funcional');
 console.log('JHON'); //PRUEBA DE CONFLICTOS
 document.getElementById('boton').addEventListener('click', function () {
-    const imagenSrc = document.getElementById('imagen').src;
+    var imagenSrc = document.getElementById('imagen').src;
     window.location.href = imagenSrc;
     document.getElementById('botonRegresar').style.display = 'inline-block';
     console.log('ejecucion normal');
@@ -87,15 +90,16 @@ document.getElementById('botonRegresar').addEventListener('click', function () {
     window.location.href = "index.html";
 });
 // DESTRUCCION DE OBJETOS Y ARREGLOS
-(() => {
-    const avenger = {
+(function () {
+    var avenger = {
         nombre: 'JhonF',
         clave: '12345',
         poder: 'power'
     };
-    const extraer = ({ nombre, poder, clave }) => {
+    var extraer = function (_a) {
+        var nombre = _a.nombre, poder = _a.poder, clave = _a.clave;
     };
-    const { nombre, clave, poder } = avenger; // No importa el orden siempre y cuando sea un objeto
+    var nombre = avenger.nombre, clave = avenger.clave, poder = avenger.poder; // No importa el orden siempre y cuando sea un objeto
     /*console.log( avenger.nombre);
     console.log(avenger.clave);
     console.log(avenger.poder);*/
@@ -103,33 +107,33 @@ document.getElementById('botonRegresar').addEventListener('click', function () {
     console.log(clave);
     console.log(poder);
     //___________________________________________________________
-    const avengers = [`Thor`, `Iroman`, `Spiderman`, `1245`];
-    const [thor, iroman, spiderman, numero] = avengers;
+    var avengers = ["Thor", "Iroman", "Spiderman", "1245"];
+    var thor = avengers[0], iroman = avengers[1], spiderman = avengers[2], numero = avengers[3];
     console.log(thor);
     console.log(iroman);
     console.log(spiderman);
     console.log(numero);
 })();
 //PROMESAS
-(() => {
+(function () {
     console.log('Inicio');
     // resolve, se llama cuando funciona correcatmente
     // reject, se llama cuando sucede un error
-    const prom1 = new Promise((resolve, reject) => {
-        setTimeout(() => {
+    var prom1 = new Promise(function (resolve, reject) {
+        setTimeout(function () {
             reject('Se termino el timeout');
         }, 1000);
     });
     prom1
-        .then(mensaje => console.log(mensaje))
-        .catch(err => console.warn(err));
+        .then(function (mensaje) { return console.log(mensaje); })
+        .catch(function (err) { return console.warn(err); });
     console.log('Fin');
 })();
 //PROMESAS Y SU TIPADO
-(() => {
-    const retirarDinero = (montoRetirar) => {
-        let dineroActual = 1000;
-        return new Promise((resolve, reject) => {
+(function () {
+    var retirarDinero = function (montoRetirar) {
+        var dineroActual = 1000;
+        return new Promise(function (resolve, reject) {
             if (montoRetirar > dineroActual) {
                 reject('No hay suficientes fondos');
             }
@@ -140,19 +144,19 @@ document.getElementById('botonRegresar').addEventListener('click', function () {
         });
     };
     retirarDinero(400)
-        .then(montoActual => console.log(`Me queda ${montoActual}`))
+        .then(function (montoActual) { return console.log("Me queda ".concat(montoActual)); })
         .catch(console.warn);
 })();
 /* INTERFACES --------------------------------------------------------
  Son las reglas que cumple un objeto para utilizar como un tipo*/
-(() => {
-    const enviarMision = (xmen) => {
-        console.log(`Enviando a ${xmen.nombre} a la mision `);
+(function () {
+    var enviarMision = function (xmen) {
+        console.log("Enviando a ".concat(xmen.nombre, " a la mision "));
     };
-    const regresarAlCuartel = (xmen) => {
-        console.log(`Enviando a ${xmen.nombre} a la misión`);
+    var regresarAlCuartel = function (xmen) {
+        console.log("Enviando a ".concat(xmen.nombre, " a la misi\u00F3n"));
     };
-    const wolverine = {
+    var wolverine = {
         nombre: 'logan',
         edad: 60
     };
@@ -161,9 +165,9 @@ document.getElementById('botonRegresar').addEventListener('click', function () {
 })();
 // CLASES---------------------------------------------------------------
 // CONSTRUCTORES DE UNA CLASE
-(() => {
-    class Avenger {
-        constructor(nombre, equipo, nombreReal, puedePelear) {
+(function () {
+    var Avenger = /** @class */ (function () {
+        function Avenger(nombre, equipo, nombreReal, puedePelear) {
             this.nombre = 'sin nombre';
             this.peleasGanadas = 15;
             this.nombre = nombre;
@@ -171,24 +175,40 @@ document.getElementById('botonRegresar').addEventListener('click', function () {
             this.nombreReal = nombreReal;
             this.puedePelear = true;
         }
-    }
-    const antman = new Avenger('Antman');
+        return Avenger;
+    }());
+    var antman = new Avenger('Antman');
     antman.equipo = 'Iroman';
     antman.nombreReal = 'Batman';
     antman.pedePelear = true;
     console.log(antman);
 })();
 // SIMPLIFICANDO LAS PROPIEDADES DE UNA CLASE
-(() => {
-    class Equipo {
-        constructor(nombre, capitan, jugadores = 15, partidosGanados, campeon = true) {
+(function () {
+    var Equipo = /** @class */ (function () {
+        function Equipo(nombre, capitan, jugadores, partidosGanados, campeon) {
+            if (jugadores === void 0) { jugadores = 15; }
+            if (campeon === void 0) { campeon = true; }
             this.nombre = nombre;
             this.capitan = capitan;
             this.jugadores = jugadores;
             this.partidosGanados = partidosGanados;
             this.campeon = campeon;
         }
-    }
-    const yankees = new Equipo('Yankees', 'Jhon');
+        return Equipo;
+    }());
+    var yankees = new Equipo('Yankees', 'Jhon');
     console.log(yankees);
+})();
+// TIPADO DEL RETORNO DE UNA FUNCION
+(function () {
+    var sumar = function (a, b) { return a + b; };
+    // return a + b;
+    var nombre = function () { return 'Hola Jhon'; };
+    var obtenerSalario = function () {
+        return new Promise(function (resolve, reject) {
+            resolve('Jhon');
+        });
+    };
+    obtenerSalario().then(function (a) { return console.log(a); });
 })();
