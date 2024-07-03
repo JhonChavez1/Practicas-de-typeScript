@@ -227,11 +227,11 @@ document.getElementById('boton')! .addEventListener('click', function() {
         poder?: string;
     }
 
-    const enviarMision = (xmen: {xmen: Xmen}) => {
+    const enviarMision = (xmen: Xmen) => {
         console.log(`Enviando a ${ xmen.nombre } a la mision `);
     }
 
-    const regresarAlCuartel = (xmen: {xmen: Xmen}) =>{
+    const regresarAlCuartel = (xmen: Xmen) =>{
         console.log(`Enviando a ${xmen.nombre} a la misión`);
     }
 

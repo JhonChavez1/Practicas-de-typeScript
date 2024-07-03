@@ -13,17 +13,16 @@ exports.User = void 0;
 function imprimirConsola(constructorClase) {
     console.log(constructorClase);
 }
-var User = /** @class */ (function () {
-    function User(nombre, clave) {
+let User = class User {
+    constructor(nombre, clave) {
         this.nombre = nombre;
         this.clave = clave;
     }
-    User.prototype.imprimir = function () {
-        console.log("".concat(this.nombre, " - ").concat(this.clave));
-    };
-    User = __decorate([
-        imprimirConsola
-    ], User);
-    return User;
-}());
+    imprimir() {
+        console.log(`${this.nombre} - ${this.clave}`);
+    }
+};
 exports.User = User;
+exports.User = User = __decorate([
+    imprimirConsola
+], User);
