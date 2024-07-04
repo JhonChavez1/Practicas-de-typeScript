@@ -1,4 +1,7 @@
 "use strict";
+/*import { User } from './clases/user';
+const wolverine = new User('Logan', '1234');
+console.log(wolverine);*/
 (function () {
     const mensaje = 'Hola';
     /*if ( true ) {
@@ -191,4 +194,16 @@ document.getElementById('botonRegresar').addEventListener('click', function () {
     }
     const yankees = new Equipo('Yankees', 'Jhon');
     console.log(yankees);
+})();
+// TIPADO DEL RETORNO DE UNA FUNCION
+(() => {
+    const sumar = (a, b) => a + b;
+    // return a + b;
+    const nombre = () => 'Hola Jhon';
+    const obtenerSalario = () => {
+        return new Promise((resolve, reject) => {
+            resolve('Jhon');
+        });
+    };
+    obtenerSalario().then(a => console.log(a));
 })();

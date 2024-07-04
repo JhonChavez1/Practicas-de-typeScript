@@ -5,3 +5,9 @@ prueba de CONFLICTOS
 123456
 // CONFLICTOS
 Esta linea se edito desde la rama main
+
+INICIAR SERVIDOR
+npx ts-node src/server.ts
+
+
+AltGr + }} = (``)

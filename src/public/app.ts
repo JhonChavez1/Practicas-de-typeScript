@@ -1,4 +1,8 @@
 
+/*import { User } from './clases/user';
+const wolverine = new User('Logan', '1234');
+console.log(wolverine);*/
+
 (function() {
 
     const mensaje = 'Hola';
@@ -223,11 +227,11 @@ document.getElementById('boton')! .addEventListener('click', function() {
         poder?: string;
     }
 
-    const enviarMision = (xmen: {xmen: Xmen}) => {
+    const enviarMision = (xmen: Xmen) => {
         console.log(`Enviando a ${ xmen.nombre } a la mision `);
     }
 
-    const regresarAlCuartel = (xmen: {xmen: Xmen}) =>{
+    const regresarAlCuartel = (xmen: Xmen) =>{
         console.log(`Enviando a ${xmen.nombre} a la misión`);
     }
 
@@ -285,6 +289,24 @@ document.getElementById('boton')! .addEventListener('click', function() {
      const yankees = new Equipo('Yankees', 'Jhon');
      console.log(yankees);
 
+
+})();
+
+
+
+// TIPADO DEL RETORNO DE UNA FUNCION
+
+(()=>{
+
+    const sumar = (a: number, b: number): number => a + b; 
+        // return a + b;
+    const nombre = ():string => 'Hola Jhon';
+    const obtenerSalario = () => {
+        return new Promise( (resolve, reject) => {
+            resolve('Jhon');
+        });
+    }
+    obtenerSalario().then(a => console.log( a ))
 
 })();
 
